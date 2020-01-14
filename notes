@@ -1,0 +1,48 @@
+***TUPLE***
+assigning a tuple type can be broken with the usage of push
+
+ie) const x:[number, string] = [3, 'test']
+x.push('test2') <== passes with no errors even though a tuple should not allow this
+
+***ENUM***
+enum "name" => allows a readable mapping of an identifier 
+ie) enum Role {ADMIN, READ_ONLY, AUTHOR}
+
+ADMIN = 1
+READ_ONLY = 2
+AUTHOR = 3
+
+can also define what you want each identifer to be, if not it naturally starts from 1 and increments from there.
+
+***UNION***
+Union types must be carefully thought of in terms of logic, as different scenarios of explicit union definition may result in ts complaining 
+
+ie) input1: number | string, input2: number | string
+
+result = input1 + input2 <== an error is thrown despite it not being wrong, treats the plus as incorrect due to string existing as well, fix this by forcing inference to interpret as number when it is a number
+
+***LITERAL***
+Literal <== can force a variable to be a particular value/other values with the "|" operator
+
+**VERY USEFUL FOR DRY, ESP COMPLEX OBJECTS**
+Type Alias <== custom defining of types
+ie) 
+Type Combinable = string | number;
+Type Specific = 'as-text' | 'as-number';
+
+***RETURN TYPES***
+Return types can also be explicit in functions
+ie) function add(n1: number, n2: number): string {
+  return n1 + n2 <== ts errors
+};
+
+function add(n1: number, n2: number): string {
+  return n1.toString() + n2.toString() <== ts no longer errors
+};
+
+result would enforce a string as ts expects a string to return
+
+if a function returns nothing, ts expects a 'void' type to be returned
+
+***FUNCTION TYPES***
+can define parameters and expected output in a function
