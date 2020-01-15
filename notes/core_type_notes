@@ -1,3 +1,14 @@
+***TYPE CHECKING***
+when having union or unknown types, type checking must occur, cases where different types are handled with logic
+
+ie)
+where userInput = unknown type
+where userName = string type
+
+userName = userInput <== this errors
+
+if (typeof name === 'string) userName = userInput <== this doesn't error
+
 ***TUPLE***
 assigning a tuple type can be broken with the usage of push
 
@@ -46,3 +57,11 @@ if a function returns nothing, ts expects a 'void' type to be returned
 
 ***FUNCTION TYPES***
 can define parameters and expected output in a function
+
+***UNKNOWN***
+used when a user input's something that we do not know. More strict than ANY, as unknown still has ts' static checking 
+
+***NEVER***
+a function return type
+typically used in functions like error generators or utility functions that halt your script and doesn't return ANYTHING
+

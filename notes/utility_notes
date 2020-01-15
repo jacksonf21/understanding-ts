@@ -1,0 +1,42 @@
+***AUTO COMPILE***
+WATCH SPECIFIC FILES
+tsc "yourfilename.ts" -w or --watch
+
+WATCH SPECIFIC DIRECTORIES
+"tsc --init" in the desired folder/directory
+"tsc -w" or "tsc --watch" to start watch in tsc init'd folder/directory
+
+***TSC CONFIG SETTINGS (inside tsconfig.json)***
+ 
+exclude <== node_modules is excluded by default without the exclude command, however if you decide to use exclude you MUST include node_modules again or else it will not be excluded.
+
+include <== same logic as above, you MUST include every file you would like to compile
+
+target <== what type of es ts compiles to, can set es5 es6 etc.
+
+lib <== allows ts to recognize objects such as DOM, console.log(), etc. 
+
+  --LIKELY TO USE COMMANDS--
+  ***DEBUGGING*** 
+  sourceMap <== enable to true to view .ts files in the browser as well
+
+  ***OUTDIR**
+  outDir <== allows you to specify where you want to compile your js files to
+
+  ***ROOTDIR***
+  rootDir <== allows you to specify the root of your ts to compile files
+
+  ***REMOVECOMMENTS***
+  removeComments
+
+  ***NOEMITONERROR***
+  "noEmitOnError" <== will not compile ANY js when ANY ts error is statically found
+
+***ADDITIONAL CHECKS***
+"nounusedlocals" <== any locally defined variable that is not used throws an error in ts
+"noimplicitreturns" <== ensures that any case of a function must have a return statement 
+
+
+some extensions in vscode you should get
+- DEBUGGER for CHROME lets you debug inside vs code 
+- PRETTIER <== helps auto format
