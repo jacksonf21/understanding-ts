@@ -129,6 +129,14 @@ typically used in functions like error generators or utility functions that halt
 
   ie)
   class Department {
+    static fiscalYear = 2020;
+
+    constructor(private name: string) {}
     
+    getYear() {
+      return Department.fiscalYear;
+    }
   }
+
+  
 
