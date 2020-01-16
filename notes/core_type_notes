@@ -65,3 +65,70 @@ used when a user input's something that we do not know. More strict than ANY, as
 a function return type
 typically used in functions like error generators or utility functions that halt your script and doesn't return ANYTHING
 
+***CLASSES***
+
+  ***THIS TYPE***
+  you can use the type 'this' in classes to inform ts the method belongs to which class
+
+  ie )
+
+  class Devices {
+    constructor() {
+      this.name = name
+    }
+
+    describe(this: Devices) { <== this method's this always belongs to Devices and ts will throw an error if it isn't 
+      console.log(`Department: ${this.name}`)
+    }
+  }
+
+  ***PRIVATE (MODIFIER)***
+  private is a modifier in classes that enforce a ts static check of methods being used only within the class and not externally
+
+  ***PROTECTED (MODIFIER)***
+  protected is like private, but can also allow extended classes to access the attribute. Private does not allow extended classes to do so
+
+  ***SHORTHAND***
+  in type defintions of the constructor, a short hand is possible
+
+  ie) 
+  constructor(
+    private id: string,
+    public name: string
+  )
+
+  is the same as below
+
+  private id: string;
+  name: string;
+
+  constructor(id: string, name: string) {
+    this.name = name,
+    this.string = string
+  }
+
+  ***READONLY (MODIFIER)***
+  readonly is a modifier in classes that enforce a ts static check of something not changing after its initialization
+
+  ***INHERITANCE***
+  remember, if you extend a class, you must call super before assigning any properties to the class inheriting anything.
+  - also super can be called inside a constructor method to access the old constructor
+
+  - you can also overwrite existing class methods with more nuanced logic in the extended class; use the same method name from the base class
+
+  ***STATIC METHODS/PROPERTIES (TYPICALLY USED AS A UTILITY FUNCTION)***
+  global methods defined based and accessible on the class, not on the instance. Call static before a class method to do so.
+
+  ie) static createEmployee(name: string) {
+    return {
+      name: name;
+    }
+  };
+
+  to access static methods/properties inside the actual class, you would need to refer to the class and static method/property accordingly
+
+  ie)
+  class Department {
+    
+  }
+
