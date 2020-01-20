@@ -138,5 +138,26 @@ typically used in functions like error generators or utility functions that halt
     }
   }
 
-  
+***ABSTRACT***
+forces a user to change the method with abstract in front of it, the class also must have abstract in front of it to use this prefix
 
+ie) abstract class Department {
+  abstract describe(this: Department): void; <== necessary syntax for ts
+}
+
+***SINGLETON***
+enforces only a single instance of a class at any given time
+
+do this by making the constructor private, and adding a private static attribute and a static method to access the private static attribute and assign logic to enforce a single instance
+
+ie) 
+
+private static instance: AccountingDepartment;
+
+private constructor() {}
+
+static getInstance() {
+  if (AccountingDepartment.instance) return this.instance
+}
+this.instance = new AccountingDepartment('d2', []);
+return this.instance
